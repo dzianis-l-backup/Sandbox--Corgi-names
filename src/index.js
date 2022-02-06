@@ -1,9 +1,12 @@
-'use strict'
+import uniqueRandomArray from 'unique-random-array'
+// import starWarsNames from './starwars-names.json'
 
-var uniqueRandomArray = require('unique-random-array')
-var starWarsNames = require('./star-names.json')
+import { readFileSync } from 'fs'
+const starWarsNames = JSON.parse(
+    readFileSync(new URL('./starwars-names.json', import.meta.url))
+)
 
-module.exports = {
+export default {
     all: starWarsNames,
     random: uniqueRandomArray(starWarsNames),
 }

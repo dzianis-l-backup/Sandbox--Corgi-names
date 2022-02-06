@@ -1,0 +1,4 @@
+{
+    "file": ["./src/index.test.js"],
+    "require": "@babel/register"
+}
