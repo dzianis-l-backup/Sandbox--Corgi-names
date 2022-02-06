@@ -1,0 +1,32 @@
+{
+  "name": "sandbox--npm-package",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Owrlean/Sandbox--Npm-package.git"
+  },
+  "keywords": [
+    "npm",
+    "package"
+  ],
+  "author": "Owrlean <dzianisl.work@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Owrlean/Sandbox--Npm-package/issues"
+  },
+  "homepage": "https://github.com/Owrlean/Sandbox--Npm-package#readme",
+  "dependencies": {
+    "unique-random-array": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}
