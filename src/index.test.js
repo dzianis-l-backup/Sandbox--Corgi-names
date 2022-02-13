@@ -7,10 +7,7 @@ describe('starwars-names', function () {
     })
 
     it('should allow to get a random name from the list', () => {
-        assert.equal(
-            isIncludedIn(starWarsNames.all)(starWarsNames.random()),
-            true
-        )
+        assert.equal(isIncludedIn(starWarsNames.all)(starWarsNames.random()), true)
     })
 })
 

@@ -4,12 +4,23 @@
         "node": true,
         "es6": true
     },
-    "extends": ["eslint:recommended"],
-    "plugins": ["prettier"],
+    "extends": [
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "prettier"
+    ],
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "no-multiple-empty-lines": "error"
     },
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
+    },
+    "globals": {
+        "describe": "readonly",
+        "it": "readonly",
     }
 }
