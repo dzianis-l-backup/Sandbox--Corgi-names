@@ -11,7 +11,7 @@
         "validate": "yarn lint && yarn test"
     },
     "lint-staged": {
-        "*": "yarn validate"
+        "*.{js}": "yarn validate"
     },
     "type": "module",
     "repository": {

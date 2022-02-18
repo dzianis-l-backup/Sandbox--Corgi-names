@@ -21,6 +21,6 @@
     },
     "globals": {
         "describe": "readonly",
-        "it": "readonly",
+        "it": "readonly"
     }
 }
