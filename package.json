@@ -7,7 +7,7 @@
         "lint": "eslint ./src/*.js --fix",
         "test": "node --experimental-json-modules node_modules/mocha/bin/_mocha",
         "prebuild": "rimraf dist",
-        "build": "yarn webpack",
+        "build": "yarn webpack -p",
         "validate": "yarn lint && yarn test",
         "coverage": "c8 -r html yarn test"
     },
@@ -42,7 +42,6 @@
         "@babel/preset-env": "^7.16.11",
         "babel-loader": "^8.2.3",
         "c8": "^7.11.0",
-        "copy-webpack-plugin": "^10.2.4",
         "eslint": "^8.8.0",
         "eslint-plugin-prettier": "^4.0.0",
         "husky": "^7.0.4",

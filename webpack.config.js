@@ -1,6 +1,5 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import CopyPlugin from 'copy-webpack-plugin'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -24,8 +23,13 @@ export default {
         filename: '[name].js',
         clean: true,
         path: path.resolve(__dirname, 'dist'),
-        libraryExport: 'default',
+        library: {
+            type: 'umd',
+            name: 'names',
+            export: 'default', // xyz.default = index.js module, removes the "default", direct assignment
+        },
         publicPath: '',
+        globalObject: 'this', // crucial for umd, assignments to context
     },
 
     module: {
@@ -42,7 +46,6 @@ export default {
                                     targets: {
                                         node: '14',
                                     },
-                                    modules: 'cjs',
                                 },
                             ],
                         ],
@@ -51,16 +54,4 @@ export default {
             },
         ],
     },
-
-    plugins: [
-        // since *.json is not inlined by webpack even with loaders
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: 'src/*.json',
-                    to: '[name][ext]',
-                },
-            ],
-        }),
-    ],
 }
