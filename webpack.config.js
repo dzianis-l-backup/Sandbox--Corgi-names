@@ -25,12 +25,14 @@ export default {
         path: path.resolve(__dirname, 'dist'),
         library: {
             type: 'umd',
-            name: 'names',
+            name: 'corgi-names',
             export: 'default', // xyz.default = index.js module, removes the "default", direct assignment
         },
         publicPath: '',
         globalObject: 'this', // crucial for umd, assignments to context
     },
+
+    externals: 'unique-random-array',
 
     module: {
         rules: [

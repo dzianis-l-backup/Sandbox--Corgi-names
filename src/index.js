@@ -1,7 +1,7 @@
 import uniqueRandomArray from 'unique-random-array'
-import starWarsNames from './names.json'
+import names from './names.json'
 
 export default {
-    all: starWarsNames,
-    random: uniqueRandomArray(starWarsNames),
+    all: names,
+    random: uniqueRandomArray(names),
 }

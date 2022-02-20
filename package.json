@@ -7,7 +7,7 @@
         "lint": "eslint ./src/*.js --fix",
         "test": "node --experimental-json-modules node_modules/mocha/bin/_mocha",
         "prebuild": "rimraf dist",
-        "build": "yarn webpack -p",
+        "build": "yarn webpack --mode production",
         "validate": "yarn lint && yarn test",
         "coverage": "c8 -r html yarn test"
     },
