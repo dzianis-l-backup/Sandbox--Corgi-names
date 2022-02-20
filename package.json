@@ -6,10 +6,10 @@
     "scripts": {
         "lint": "eslint ./src/*.js --fix",
         "test": "node --experimental-json-modules node_modules/mocha/bin/_mocha",
-        "test:watch": "mocha --watch",
         "prebuild": "rimraf dist",
         "build": "yarn webpack",
-        "validate": "yarn lint && yarn test"
+        "validate": "yarn lint && yarn test",
+        "coverage": "c8 -r html yarn test"
     },
     "lint-staged": {
         "*.{js}": "yarn validate"
@@ -40,8 +40,8 @@
         "@babel/core": "^7.17.0",
         "@babel/eslint-parser": "^7.17.0",
         "@babel/preset-env": "^7.16.11",
-        "@babel/register": "^7.17.0",
         "babel-loader": "^8.2.3",
+        "c8": "^7.11.0",
         "copy-webpack-plugin": "^10.2.4",
         "eslint": "^8.8.0",
         "eslint-plugin-prettier": "^4.0.0",

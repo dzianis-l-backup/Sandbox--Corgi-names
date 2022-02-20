@@ -5,8 +5,9 @@
             {
                 "targets": {
                     "node": "14.19"
-                }
+                },
+                "modules": "cjs"
             }
         ]
-    ]
+    ],
 }
