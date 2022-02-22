@@ -1,5 +1,5 @@
 {
-    "name": "sandbox--npm-package",
+    "name": "sandbox--corgi-names",
     "version": "0.1.0",
     "description": "",
     "main": "dist/index.js",
@@ -9,7 +9,8 @@
         "prebuild": "rimraf dist",
         "build": "yarn webpack --mode production",
         "validate": "yarn lint && yarn test",
-        "coverage": "c8 -r html yarn test"
+        "coverage": "c8 -r html yarn test",
+        "ci": "validate"
     },
     "lint-staged": {
         "*.{js}": "yarn validate"
