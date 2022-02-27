@@ -10,7 +10,7 @@
         "build": "yarn webpack --mode production",
         "validate": "yarn lint && yarn test",
         "coverage": "c8 -r html yarn test",
-        "ci": "validate"
+        "ci": "yarn validate && yarn build"
     },
     "lint-staged": {
         "*.{js}": "yarn validate"
