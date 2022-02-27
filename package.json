@@ -1,6 +1,6 @@
 {
     "name": "sandbox--corgi-names",
-    "version": "0.1.0",
+    "version": "0.1.4",
     "description": "",
     "main": "dist/index.js",
     "scripts": {
@@ -10,7 +10,7 @@
         "build": "yarn webpack --mode production",
         "validate": "yarn lint && yarn test",
         "coverage": "c8 -r html yarn test",
-        "ci": "validate"
+        "build:ci": "yarn validate && yarn build"
     },
     "lint-staged": {
         "*.{js}": "yarn validate"
