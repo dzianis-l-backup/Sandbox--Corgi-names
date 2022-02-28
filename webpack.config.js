@@ -32,8 +32,6 @@ export default {
         globalObject: 'this', // crucial for umd, assignments to context
     },
 
-    externals: 'unique-random-array',
-
     module: {
         rules: [
             {
@@ -41,16 +39,7 @@ export default {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [
-                            [
-                                '@babel/preset-env',
-                                {
-                                    targets: {
-                                        node: '14',
-                                    },
-                                },
-                            ],
-                        ],
+                        presets: [['@babel/preset-env']],
                     },
                 },
             },
