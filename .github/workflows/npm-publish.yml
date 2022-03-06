@@ -9,7 +9,7 @@ on:
             - master
 
 jobs:
-    build:
+    validate:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -18,10 +18,9 @@ jobs:
                   node-version: 14
             - run: npm ci
             - run: yarn validate
-            - run: yarn build
 
-    checkVersion:
-        name: Check package version
+    check-version:
+        name: check package version
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -29,8 +28,8 @@ jobs:
 
     publish-npm:
         needs:
-            - build
-            - checkVersion
+            - validate
+            - check-version
 
         runs-on: ubuntu-latest
         steps:
@@ -39,7 +38,12 @@ jobs:
               with:
                   node-version: 14
                   registry-url: https://registry.npmjs.org/
-            - run: npm ci
+            - uses: cycjimmy/semantic-release-action@v3
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+            - run: npx semantic-release
             - run: yarn build
             - run: npm publish
               env:
